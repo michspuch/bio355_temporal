@@ -9,7 +9,10 @@ vcftools=/usr/local/bin/vcftools
 cd /Users/classes/bio355b/CURE_projects/temporal/data_raw
 
 #Used this link: https://gwct.bio/congen/bioinformatics/wolf-snps.html to calculate how many SNPs there are (2218 SNPs):
- grep -v "#" Jensen_historical_contemporary_2218loci.vcf | wc -l
+grep -v "#" Jensen_historical_contemporary_2218loci.vcf | wc -l
+
+#Make heterozygosity output .het file
+vcftools --vcf Jensen_historical_contemporary_2218loci.vcf --out out/Jensen_historical_contemporary_2218loci.vcf --het --keep population_map.txt
 
 #Use 'head' to make sure the file looks okay
 head out/Jensen_historical_contemporary_2218loci.vcf.het
