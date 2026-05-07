@@ -23,14 +23,3 @@ ggplot(fst_plot, aes(x = pop1, y = pop2, fill = mean_fst)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
   
-#Count FST values (2219 in all)
-wc -l Jensen_pairwise_fst.weir.fst
-
-#Check for positive Fst 
-command | awk '$3 > 0' Jensen_pairwise_fst.weir.fst | wc -l
-
-#Check for Fst greater than 0.1 
-command | awk '$3 > 0.1' Jensen_pairwise_fst.weir.fst | wc -l
-
-#Check for Fst greater than 0.05
-command | awk '$3 > 0.05' Jensen_pairwise_fst.weir.fst | wc -l
