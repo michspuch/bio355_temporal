@@ -80,3 +80,18 @@ chmod +x /Users/classes/bio355b/CURE_projects/temporal/script2/run_pairwise_fst.
 head/Jensen_pairwise_fst.weir.fst
 
 
+#Count FST values (2219 in all)
+wc -l Jensen_pairwise_fst.weir.fst
+
+#Check for positive Fst 
+command | awk '$3 > 0' Jensen_pairwise_fst.weir.fst | wc -l
+
+#Check for Fst greater than 0.1 
+command | awk '$3 > 0.1' Jensen_pairwise_fst.weir.fst | wc -l
+
+#Check for Fst greater than 0.05
+command | awk '$3 > 0.05' Jensen_pairwise_fst.weir.fst | wc -l
+
+
+
+
